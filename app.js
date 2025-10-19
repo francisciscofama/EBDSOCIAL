@@ -12,6 +12,38 @@ let posts = [
     text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
     date: "Sexta, 18:00",
   },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
+  {
+    text: "💒 Domingo é dia de comunhão e aprendizado! Não perca a EBD amanhã 🙏",
+    date: "Sexta, 18:00",
+  },
 ];
 
 // Função para carregar o feed com os dados estáticos
