@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EBD - Rede Cristã</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="top-bar">
+      <div class="logo">
+        <img src="imagens/ebd-192x192.png" alt="EBD" />
+        <h1>EBD</h1>
+      </div>
+      <div class="menu">
+        <button id="refreshBtn">🔄</button>
+      </div>
+    </header>
+
+    <!-- Feed -->
+    <main id="feed" class="feed"></main>
+
+    <!-- Área de publicação -->
+    <section id="post-section" class="post-box">
+      <textarea
+        id="postText"
+        placeholder="Compartilhe uma mensagem bíblica..."
+      ></textarea>
+      <button id="sendPost">📤 Publicar</button>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
