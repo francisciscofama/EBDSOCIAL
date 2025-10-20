@@ -1,5 +1,4 @@
-// Service Worker atualizado para atualização automática
-const CACHE_NAME = "ebd-cache-v2"; // atualize a cada mudança importante
+const CACHE_NAME = "ebd-cache-v3"; // atualize a cada mudança importante
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
@@ -9,7 +8,7 @@ const FILES_TO_CACHE = [
   "/imagens/ebd-512x512.png",
 ];
 
-// Evento de instalação: adiciona arquivos ao cache
+// Instala e pré-cacheia
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
@@ -17,39 +16,39 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// Evento de ativação: limpa caches antigos
+// Ativa e remove caches antigos
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((cacheNames) =>
+      .then((keys) =>
         Promise.all(
-          cacheNames
-            .filter((name) => name !== CACHE_NAME)
-            .map((name) => caches.delete(name))
+          keys
+            .filter((key) => key !== CACHE_NAME)
+            .map((key) => caches.delete(key))
         )
       )
   );
   self.clients.claim();
 });
 
-// Evento fetch: busca do cache primeiro, depois da rede
+// Fetch: tenta rede primeiro, se falhar vai pro cache
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Se tiver no cache, retorna
-      if (response) return response;
-
-      // Senão, busca na rede e adiciona ao cache
-      return fetch(event.request).then((networkResponse) => {
-        return caches.open(CACHE_NAME).then((cache) => {
-          // Evita caching de requisições externas (como vídeos)
-          if (event.request.url.startsWith(self.origin)) {
-            cache.put(event.request, networkResponse.clone());
-          }
-          return networkResponse;
-        });
-      });
-    })
-  );
+  if (FILES_TO_CACHE.includes(new URL(event.request.url).pathname)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else {
+    // Para arquivos externos, usa cache se existir
+    event.respondWith(
+      caches.match(event.request).then((res) => res || fetch(event.request))
+    );
+  }
 });
