@@ -25,7 +25,7 @@ const posts = [
   {
     user: "Louvor Jovem",
     avatar: "https://i.pravatar.cc/150?img=34",
-    video: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    video: "https://youtu.be/LHgpTnz_g9M?si=VuAYsXncgc6iXQj0",
     text: "🎤 Adoração com todo o coração ❤️",
     date: "15 de Outubro, 2025",
   },
