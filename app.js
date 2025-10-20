@@ -36,102 +36,23 @@ const posts = [
     text: "👧 Aprendendo a palavra com alegria!",
     date: "14 de Outubro, 2025",
   },
-
-  {
-    user: "EBD Central",
-    avatar: "https://i.pravatar.cc/150?img=23",
-    video: "https://youtube.com/shorts/hHWWRl04CiU?si=QWxpVo8ETFfFUnmI",
-    text: "📖 Tema da semana: 'Andar na luz' 💡",
-    date: "17 de Outubro, 2025",
-  },
-  {
-    user: "Juventude Cristã",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    video: "https://www.youtube.com/watch?v=LHgpTnz_g9M",
-    text: "🙌 Deus tem grandes planos para ti!",
-    date: "16 de Outubro, 2025",
-  },
-  {
-    user: "Louvor Jovem",
-    avatar: "https://i.pravatar.cc/150?img=34",
-    video: "https://www.youtube.com/embed/aqz-KE-bpKQ",
-    text: "🎤 Adoração com todo o coração ❤️",
-    date: "15 de Outubro, 2025",
-  },
-  {
-    user: "Ministério Infantil",
-    avatar: "https://i.pravatar.cc/150?img=29",
-    video: "https://youtube.com/shorts/F9CGJI2cmZY?si=ZIY8PiPJ97pCkbQy",
-    text: "👧 Aprendendo a palavra com alegria!",
-    date: "14 de Outubro, 2025",
-  },
-  {
-    user: "EBD Central",
-    avatar: "https://i.pravatar.cc/150?img=23",
-    video: "https://youtube.com/shorts/hHWWRl04CiU?si=QWxpVo8ETFfFUnmI",
-    text: "📖 Tema da semana: 'Andar na luz' 💡",
-    date: "17 de Outubro, 2025",
-  },
-  {
-    user: "Juventude Cristã",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    video: "https://www.youtube.com/watch?v=LHgpTnz_g9M",
-    text: "🙌 Deus tem grandes planos para ti!",
-    date: "16 de Outubro, 2025",
-  },
-  {
-    user: "Louvor Jovem",
-    avatar: "https://i.pravatar.cc/150?img=34",
-    video: "https://www.youtube.com/embed/aqz-KE-bpKQ",
-    text: "🎤 Adoração com todo o coração ❤️",
-    date: "15 de Outubro, 2025",
-  },
-  {
-    user: "Ministério Infantil",
-    avatar: "https://i.pravatar.cc/150?img=29",
-    video: "https://youtube.com/shorts/yANNTpaExn0?si=XN4-ZLDa_wAWZKEO",
-    text: "👧 Aprendendo a palavra com alegria!",
-    date: "14 de Outubro, 2025",
-  },
-  {
-    user: "EBD Central",
-    avatar: "https://i.pravatar.cc/150?img=23",
-    video: "https://youtube.com/shorts/hHWWRl04CiU?si=QWxpVo8ETFfFUnmI",
-    text: "📖 Tema da semana: 'Andar na luz' 💡",
-    date: "17 de Outubro, 2025",
-  },
-  {
-    user: "Juventude Cristã",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    video: "https://www.youtube.com/watch?v=LHgpTnz_g9M",
-    text: "🙌 Deus tem grandes planos para ti!",
-    date: "16 de Outubro, 2025",
-  },
-  {
-    user: "Louvor Jovem",
-    avatar: "https://i.pravatar.cc/150?img=34",
-    video: "https://www.youtube.com/embed/aqz-KE-bpKQ",
-    text: "🎤 Adoração com todo o coração ❤️",
-    date: "15 de Outubro, 2025",
-  },
 ];
 
-// 🔧 Converte qualquer link YouTube/Shorts/Watch para formato embed
+// 🔧 Converte qualquer link YouTube (shorts, watch, embed, etc.) para embed
 function toEmbedLink(url) {
   if (url.includes("embed")) return url;
-  let id = "";
 
-  if (url.includes("shorts/")) {
-    id = url.split("shorts/")[1].split("?")[0];
-  } else if (url.includes("watch?v=")) {
+  let id = "";
+  if (url.includes("shorts/")) id = url.split("shorts/")[1].split("?")[0];
+  else if (url.includes("watch?v="))
     id = url.split("watch?v=")[1].split("&")[0];
-  } else if (url.includes("youtu.be/")) {
+  else if (url.includes("youtu.be/"))
     id = url.split("youtu.be/")[1].split("?")[0];
-  }
 
   return `https://www.youtube.com/embed/${id}`;
 }
 
+// 🧩 Carrega os posts no feed
 function carregarPosts() {
   feed.innerHTML = posts
     .map(
@@ -144,10 +65,11 @@ function carregarPosts() {
 
         <div class="post-video">
           <iframe
-            src="${toEmbedLink(p.video)}"
+            class="video-frame"
+            src="${toEmbedLink(p.video)}?enablejsapi=1&mute=1"
             title="${p.text}"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="autoplay; encrypted-media"
             allowfullscreen
           ></iframe>
         </div>
@@ -166,6 +88,28 @@ function carregarPosts() {
     `
     )
     .join("");
+
+  iniciarAutoPlay();
+}
+
+// 🎬 Faz autoplay quando o vídeo entra na tela
+function iniciarAutoPlay() {
+  const iframes = document.querySelectorAll(".video-frame");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const iframe = entry.target;
+        const command = entry.isIntersecting
+          ? '{"event":"command","func":"playVideo","args":""}'
+          : '{"event":"command","func":"pauseVideo","args":""}';
+        iframe.contentWindow.postMessage(command, "*");
+      });
+    },
+    { threshold: 0.6 } // Toca se 60% do vídeo estiver visível
+  );
+
+  iframes.forEach((iframe) => observer.observe(iframe));
 }
 
 carregarPosts();
