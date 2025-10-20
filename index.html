@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EBD - Rede Cristã</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="manifest.json" />
   </head>
@@ -12,10 +17,23 @@
     <header class="top-bar">
       <div class="logo">
         <img src="imagens/ebd-192x192.png" alt="EBD" />
-        <h1>EBD</h1>
+        <nav class="nav-icons">
+          <button title="Início"><i class="fa-solid fa-house"></i></button>
+          <button title="Notícias">
+            <i class="fa-regular fa-newspaper"></i>
+          </button>
+          <button title="Atualizar">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+          <button title="Notificações">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+        </nav>
       </div>
       <div class="menu">
-        <button id="refreshBtn">🔄</button>
+        <button id="refreshBtn" title="Configurações">
+          <i class="fa-solid fa-gear"></i>
+        </button>
       </div>
     </header>
 
