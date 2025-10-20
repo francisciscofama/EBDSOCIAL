@@ -50,7 +50,7 @@ function toEmbedLink(url) {
     id = url.split("youtu.be/")[1].split("?")[0];
 
   // Parâmetros para esconder controles e elementos do YouTube
-  return `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`;
+  return `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`;
 }
 
 // 🧩 Carrega os posts no feed

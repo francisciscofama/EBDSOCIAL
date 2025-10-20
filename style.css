@@ -199,6 +199,21 @@
   transform: scale(1.2);
 }
 
+#installBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none; /* inicial invisível, será mostrado via JS */
+  z-index: 1000;
+}
+
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 600px) {
   .nav-icons {
