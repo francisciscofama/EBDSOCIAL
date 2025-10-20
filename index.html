@@ -4,55 +4,160 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EBD - Rede Cristã</title>
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f5f7fa;
+        margin: 0;
+      }
 
-    <link rel="stylesheet" href="style.css" />
+      header {
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-icons button {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin: 0 5px;
+        color: #333;
+      }
+
+      .feed {
+        max-width: 600px;
+        margin: 20px auto;
+        padding-bottom: 70px;
+      }
+
+      .post {
+        background: #fff;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .post iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+      }
+
+      .post-info {
+        padding: 10px 15px;
+      }
+
+      .post-info h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+      }
+
+      .bottom-nav i {
+        font-size: 1.6rem;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <!-- Cabeçalho -->
-    <header class="top-bar">
+    <header>
       <div class="logo">
-        <img src="imagens/ebd-192x192.png" alt="EBD" />
-        <h1 class="logo-text">EBD</h1>
+        <img src="imagens/ebd-192x192.png" alt="EBD" width="40" />
+        <h1>EBD</h1>
       </div>
       <nav class="nav-icons">
-        <button title="Início"><i class="fa-solid fa-house"></i></button>
-        <button title="Notícias">
-          <i class="fa-regular fa-newspaper"></i>
-        </button>
-        <button title="Atualizar">
-          <i class="fa-solid fa-rotate-right"></i>
-        </button>
-        <button title="Notificações"><i class="fa-regular fa-bell"></i></button>
+        <button><i class="fa-solid fa-house"></i></button>
+        <button><i class="fa-regular fa-newspaper"></i></button>
+        <button><i class="fa-regular fa-bell"></i></button>
+        <button><i class="fa-solid fa-gear"></i></button>
       </nav>
-      <div class="menu">
-        <button id="configBtn" title="Configurações">
-          <i class="fa-solid fa-gear"></i>
-        </button>
-      </div>
     </header>
 
-    <!-- Feed -->
-    <main id="feed" class="feed"></main>
+    <main class="feed" id="feed">
+      <!-- VÍDEOS ESTÁTICOS (podes trocar os links) -->
+      <div class="post">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/LHgpTnz_g9M?si=fEiMDJkUI3TKED86"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <div class="post-info">
+          <h3>Tema: Crescendo na Palavra</h3>
+        </div>
+      </div>
 
-    <!-- Barra inferior tipo Instagram -->
-    <nav class="bottom-bar">
-      <button title="Início"><i class="fa-solid fa-house"></i></button>
-      <button title="Pesquisar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-      <button title="Nova publicação">
-        <i class="fa-solid fa-square-plus"></i>
-      </button>
-      <button title="Mensagens"><i class="fa-regular fa-envelope"></i></button>
-      <button title="Perfil"><i class="fa-regular fa-user"></i></button>
+      <div class="post">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/J9CZHwQFbXg?si=LHlG1hVQteKj8JD2"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <div class="post-info">
+          <h3>Estudo Bíblico: A importância da Oração</h3>
+        </div>
+      </div>
+
+      <div class="post">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/rW9MbYQrTUI?si=PUf-lVN7WA2mEUh4"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <div class="post-info">
+          <h3>Mensagem do dia: Confia no Senhor</h3>
+        </div>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <i class="fa-solid fa-house"></i>
+      <i class="fa-regular fa-newspaper"></i>
+      <i class="fa-regular fa-square-plus"></i>
+      <i class="fa-regular fa-bell"></i>
+      <i class="fa-solid fa-user"></i>
     </nav>
-
-    <script src="app.js"></script>
   </body>
 </html>
