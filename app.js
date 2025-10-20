@@ -118,24 +118,19 @@ carregarPosts();
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 
-// Captura o evento antes da instalação
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault(); // evita que o prompt apareça automaticamente
-  deferredPrompt = e; // salva o evento para usar depois
-  installBtn.style.display = "block"; // mostra o botão
-});
-
-// Quando o usuário clica no botão, mostra o prompt
 installBtn.addEventListener("click", async () => {
   if (deferredPrompt) {
-    deferredPrompt.prompt(); // mostra o prompt
+    deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
-      console.log("Usuário aceitou instalar a app");
-    } else {
-      console.log("Usuário recusou instalar a app");
-    }
+    if (outcome === "accepted") console.log("Usuário aceitou instalar a app");
+    else console.log("Usuário recusou instalar a app");
     deferredPrompt = null;
-    installBtn.style.display = "none"; // esconde o botão após o prompt
+    installBtn.style.display = "none";
   }
+});
+
+// Detecta instalação concluída
+window.addEventListener("appinstalled", () => {
+  console.log("PWA instalada!");
+  installBtn.style.display = "none";
 });
