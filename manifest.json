@@ -7,12 +7,12 @@
   "theme_color": "#004aad",
   "icons": [
     {
-      "src": "imagens/ebd-192x192.png",
+      "src": "imagens/finapp.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "imagens/ebd-512x512.png",
+      "src": "imagens/finapp.png",
       "sizes": "512x512",
       "type": "image/png"
     }
