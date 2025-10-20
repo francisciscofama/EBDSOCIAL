@@ -166,8 +166,7 @@ button#sendPost:hover {
 .nav-icons button {
   background: none;
   border: #1e1e1f;
-  border: solid 1px black;
-  border-radius: 5px;
+  border: none;
   cursor: pointer;
   font-size: 20px;
   color: #333;
@@ -192,7 +191,7 @@ button#sendPost:hover {
     font-size: 18px;
   }
   .nav-icons {
-    margin-left: 50px;
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
