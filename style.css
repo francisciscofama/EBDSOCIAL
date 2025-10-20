@@ -214,6 +214,25 @@
   z-index: 1000;
 }
 
+#btn-instalar {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #0072ff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+#btn-instalar:hover {
+  background: #005bd1;
+}
+
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 600px) {
   .nav-icons {
