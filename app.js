@@ -116,7 +116,7 @@ function iniciarAutoPlay() {
 carregarPosts();
 
 let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
+const installBtn = document.getElementById("btn-instalar");
 
 installBtn.addEventListener("click", async () => {
   if (deferredPrompt) {
