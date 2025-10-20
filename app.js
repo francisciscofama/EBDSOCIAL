@@ -32,7 +32,7 @@ const posts = [
   {
     user: "Ministério Infantil",
     avatar: "https://i.pravatar.cc/150?img=29",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://youtube.com/shorts/F9CGJI2cmZY?si=ZIY8PiPJ97pCkbQy",
     text: "👧 Aprendendo a palavra com alegria!",
     date: "14 de Outubro, 2025",
   },
@@ -61,7 +61,7 @@ const posts = [
   {
     user: "Ministério Infantil",
     avatar: "https://i.pravatar.cc/150?img=29",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://youtube.com/shorts/F9CGJI2cmZY?si=ZIY8PiPJ97pCkbQy",
     text: "👧 Aprendendo a palavra com alegria!",
     date: "14 de Outubro, 2025",
   },
@@ -89,7 +89,7 @@ const posts = [
   {
     user: "Ministério Infantil",
     avatar: "https://i.pravatar.cc/150?img=29",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://youtube.com/shorts/yANNTpaExn0?si=XN4-ZLDa_wAWZKEO",
     text: "👧 Aprendendo a palavra com alegria!",
     date: "14 de Outubro, 2025",
   },
@@ -113,13 +113,6 @@ const posts = [
     video: "https://www.youtube.com/embed/aqz-KE-bpKQ",
     text: "🎤 Adoração com todo o coração ❤️",
     date: "15 de Outubro, 2025",
-  },
-  {
-    user: "Ministério Infantil",
-    avatar: "https://i.pravatar.cc/150?img=29",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    text: "👧 Aprendendo a palavra com alegria!",
-    date: "14 de Outubro, 2025",
   },
 ];
 
