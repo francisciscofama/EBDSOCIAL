@@ -38,7 +38,7 @@ const posts = [
   },
 ];
 
-// 🔧 Converte qualquer link YouTube (shorts, watch, embed, etc.) para embed
+// 🔧 Converte qualquer link YouTube para embed e remove controles
 function toEmbedLink(url) {
   if (url.includes("embed")) return url;
 
@@ -49,7 +49,8 @@ function toEmbedLink(url) {
   else if (url.includes("youtu.be/"))
     id = url.split("youtu.be/")[1].split("?")[0];
 
-  return `https://www.youtube.com/embed/${id}`;
+  // Parâmetros para esconder controles e elementos do YouTube
+  return `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`;
 }
 
 // 🧩 Carrega os posts no feed
@@ -66,7 +67,7 @@ function carregarPosts() {
         <div class="post-video">
           <iframe
             class="video-frame"
-            src="${toEmbedLink(p.video)}?enablejsapi=1&mute=1"
+            src="${toEmbedLink(p.video)}"
             title="${p.text}"
             frameborder="0"
             allow="autoplay; encrypted-media"
