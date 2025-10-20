@@ -134,3 +134,9 @@ window.addEventListener("appinstalled", () => {
   console.log("PWA instalada!");
   installBtn.style.display = "none";
 });
+
+const btnPerfil = document.getElementById("btnPerfil");
+
+btnPerfil.addEventListener("click", () => {
+  window.location.href = "perfil.html";
+});

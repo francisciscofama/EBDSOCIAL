@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EBD - Rede Cristã</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="imagens/ebd-32x32.png"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="perfil.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="top-bar">
+      <div class="logo">
+        <img src="imagens/ebd-192x192.png" alt="EBD" />
+        <h1 class="logo-text">Jeová Shalom</h1>
+      </div>
+      <nav class="nav-icons">
+        <button title="Início"><i class="fa-solid fa-house"></i></button>
+        <button title="Notícias">
+          <i class="fa-regular fa-newspaper"></i>
+        </button>
+        <button title="Atualizar">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <button title="Notificações"><i class="fa-regular fa-bell"></i></button>
+      </nav>
+      <div class="menu">
+        <button id="configBtn" title="Configurações">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="profile-main">
+      <div class="profile-header">
+        <img
+          src="https://i.pravatar.cc/150?img=12"
+          alt="Avatar"
+          class="profile-avatar"
+        />
+        <div class="profile-name">Francisco Afonso</div>
+        <div class="profile-email">francisco@email.com</div>
+      </div>
+
+      <div class="profile-stats">
+        <div>
+          <span>54</span>
+          Publicações
+        </div>
+        <div>
+          <span>120</span>
+          Seguidores
+        </div>
+        <div>
+          <span>89</span>
+          Seguindo
+        </div>
+      </div>
+
+      <button class="btn-edit-profile">Editar Perfil</button>
+    </main>
+    <!-- Feed -->
+    <main id="feed" class="feed"></main>
+
+    <!-- Barra inferior tipo Instagram -->
+    <nav class="bottom-bar">
+      <button title="Início"><i class="fa-solid fa-house"></i></button>
+      <button title="Pesquisar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button title="Nova publicação">
+        <i class="fa-solid fa-square-plus"></i>
+      </button>
+      <button title="Mensagens"><i class="fa-regular fa-envelope"></i></button>
+      <button title="Perfil"><i class="fa-regular fa-user"></i></button>
+    </nav>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -61,9 +61,61 @@
         <i class="fa-solid fa-square-plus"></i>
       </button>
       <button title="Mensagens"><i class="fa-regular fa-envelope"></i></button>
-      <button title="Perfil"><i class="fa-regular fa-user"></i></button>
+      <button id="btnPerfil" title="Perfil">
+        <i class="fa-regular fa-user"></i>
+      </button>
     </nav>
 
     <script src="app.js"></script>
+    <script>
+      // Espera o DOM carregar
+      window.onload = () => {
+        // Botão Perfil
+        const btnPerfil = document.getElementById("btnPerfil");
+        if (btnPerfil) {
+          btnPerfil.addEventListener("click", () => {
+            window.location.href = "perfil.html"; // redireciona para a página do perfil
+          });
+        }
+
+        // PWA - botão instalar
+        let deferredPrompt;
+        const installBtn = document.getElementById("btn-instalar");
+
+        // Esconde botão se app já estiver instalada
+        if (
+          window.matchMedia("(display-mode: standalone)").matches ||
+          window.navigator.standalone
+        ) {
+          installBtn.style.display = "none";
+        }
+
+        // Captura evento antes de instalar
+        window.addEventListener("beforeinstallprompt", (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          installBtn.style.display = "block";
+        });
+
+        // Clique para instalar
+        installBtn.addEventListener("click", async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === "accepted")
+              console.log("Usuário aceitou instalar a app");
+            else console.log("Usuário recusou instalar a app");
+            deferredPrompt = null;
+            installBtn.style.display = "none";
+          }
+        });
+
+        // Detecta instalação concluída
+        window.addEventListener("appinstalled", () => {
+          console.log("PWA instalada!");
+          installBtn.style.display = "none";
+        });
+      };
+    </script>
   </body>
 </html>
