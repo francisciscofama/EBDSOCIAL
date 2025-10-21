@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <link rel="manifest" href="manifest.json" />
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -67,6 +68,17 @@
     </nav>
 
     <script src="app.js"></script>
+    <script>
+      // REGISTRA O SERVICE WORKER
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(() => console.log("✅ Service Worker registrado com sucesso!"))
+          .catch((err) =>
+            console.log("❌ Erro ao registrar Service Worker:", err)
+          );
+      }
+    </script>
     <script>
       // Espera o DOM carregar
       window.onload = () => {
