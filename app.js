@@ -1,3 +1,45 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getMessaging,
+  getToken,
+  onMessage,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBsv7Flba-MzRtBeYPkQ4s0uysdZm5LrVk",
+  authDomain: "ebd---redecrista.firebaseapp.com",
+  projectId: "ebd---redecrista",
+  storageBucket: "ebd---redecrista.firebasestorage.app",
+  messagingSenderId: "801507398801",
+  appId: "1:801507398801:web:e337a96ea9a52f64a2db30",
+  measurementId: "G-N1VW23ZRLH",
+};
+
+const app = initializeApp(firebaseConfig);
+const messaging = getMessaging(app);
+
+// Pede permissão e gera token FCM
+Notification.requestPermission().then((permission) => {
+  if (permission === "granted") {
+    console.log("✅ Permissão concedida para notificações.");
+
+    getToken(messaging, {
+      vapidKey:
+        "BOaNsCBQ-D8ZDTA9hDBNObRBqaWpPMOYREzxVOryoJPyUNmTZjRBokZ_bXWIKW4gO7eIKeMPTq6hZQoU9DFH1Ck",
+    }).then((token) => {
+      console.log("🎯 Token do usuário:", token);
+    });
+  } else {
+    console.warn("🚫 Permissão negada para notificações.");
+  }
+});
+
+// Recebe notificações quando o app está aberto
+onMessage(messaging, (payload) => {
+  console.log("📨 Notificação recebida:", payload);
+  alert(payload.notification.title + "\n" + payload.notification.body);
+});
+
 const feed = document.getElementById("feed");
 
 const posts = [
