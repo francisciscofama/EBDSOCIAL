@@ -4,6 +4,13 @@ const posts = [
   {
     user: "Igreja Betel",
     avatar: "https://i.pravatar.cc/150?img=12",
+    video: "https://youtube.com/shorts/YH-D95pf_VY?si=FMWm8dohTvj9LFvC",
+    text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
+    date: "18 de Outubro, 2025",
+  },
+  {
+    user: "Igreja Betel",
+    avatar: "https://i.pravatar.cc/150?img=12",
     video: "https://youtube.com/shorts/k162i_r2n68?si=b3oUbtoztHI953Tq",
     text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
     date: "18 de Outubro, 2025",
