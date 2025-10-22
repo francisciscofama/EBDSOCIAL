@@ -5,6 +5,7 @@ import {
   onMessage,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
 
+// 🧱 Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBsv7Flba-MzRtBeYPkQ4s0uysdZm5LrVk",
   authDomain: "ebd---redecrista.firebaseapp.com",
@@ -15,26 +16,47 @@ const firebaseConfig = {
   measurementId: "G-N1VW23ZRLH",
 };
 
+// 🚀 Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
-// Pede permissão e gera token FCM
-Notification.requestPermission().then((permission) => {
-  if (permission === "granted") {
-    console.log("✅ Permissão concedida para notificações.");
+// 📦 Registra o Service Worker antes de pedir token
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/firebase-messaging-sw.js")
+    .then((registration) => {
+      console.log("✅ Service Worker registrado:", registration);
 
-    getToken(messaging, {
-      vapidKey:
-        "BOaNsCBQ-D8ZDTA9hDBNObRBqaWpPMOYREzxVOryoJPyUNmTZjRBokZ_bXWIKW4gO7eIKeMPTq6hZQoU9DFH1Ck",
-    }).then((token) => {
-      console.log("🎯 Token do usuário:", token);
+      // 🧩 Agora pede permissão para notificações
+      Notification.requestPermission().then((permission) => {
+        if (permission === "granted") {
+          console.log("✅ Permissão concedida para notificações.");
+
+          // 🔑 Gera o token FCM
+          getToken(messaging, {
+            vapidKey:
+              "BOaNsCBQ-D8ZDTA9hDBNObRBqaWpPMOYREzxVOryoJPyUNmTZjRBokZ_bXWIKW4gO7eIKeMPTq6hZQoU9DFH1Ck",
+            serviceWorkerRegistration: registration, // importante!
+          })
+            .then((token) => {
+              console.log("🎯 Token do usuário:", token);
+            })
+            .catch((err) => {
+              console.error("❌ Erro ao obter token:", err);
+            });
+        } else {
+          console.warn("🚫 Permissão negada para notificações.");
+        }
+      });
+    })
+    .catch((err) => {
+      console.error("❌ Falha ao registrar Service Worker:", err);
     });
-  } else {
-    console.warn("🚫 Permissão negada para notificações.");
-  }
-});
+} else {
+  console.error("⚠️ Este navegador não suporta Service Workers.");
+}
 
-// Recebe notificações quando o app está aberto
+// 🔔 Recebe notificações quando o app está aberto
 onMessage(messaging, (payload) => {
   console.log("📨 Notificação recebida:", payload);
   alert(payload.notification.title + "\n" + payload.notification.body);
