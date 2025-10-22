@@ -52,6 +52,14 @@ const posts = [
     text: "👧 Aprendendo a palavra com alegria!",
     date: "14 de Outubro, 2025",
   },
+
+  {
+    user: "Ministério Infantil",
+    avatar: "https://i.pravatar.cc/150?img=29",
+    video: "https://youtube.com/shorts/bzbD8KiiqXE?si=Duhzkc9-czD_R1kE",
+    text: "👧 Aprendendo a palavra com alegria!",
+    date: "14 de Outubro, 2025",
+  },
 ];
 
 // 🔧 Converte qualquer link YouTube para embed e remove controles
