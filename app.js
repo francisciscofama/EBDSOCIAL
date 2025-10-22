@@ -8,6 +8,15 @@ const posts = [
     text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
     date: "18 de Outubro, 2025",
   },
+
+  {
+    user: "Francisco Marques Afonso",
+    avatar: "https://i.pravatar.cc/150?img=12",
+    video:
+      "https://web.facebook.com/share/r/19Si1LQPMb/?mibextid=rS40aB7S9Ucbxw6v",
+    text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
+    date: "18 de Outubro, 2025",
+  },
   {
     user: "Igreja Betel",
     avatar: "https://i.pravatar.cc/150?img=12",
@@ -57,7 +66,7 @@ function toEmbedLink(url) {
     id = url.split("youtu.be/")[1].split("?")[0];
 
   // Parâmetros para esconder controles e elementos do YouTube
-  return `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`;
+  return `https://www.youtube.com/embed/${id}?enablejsapi=1&origin=${location.origin}&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`;
 }
 
 // 🧩 Carrega os posts no feed

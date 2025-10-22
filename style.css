@@ -132,9 +132,10 @@
 }
 
 /* ==== POST ==== */
+
 .post {
   width: 100%;
-  max-width: 600px;
+  max-width: 100%;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
