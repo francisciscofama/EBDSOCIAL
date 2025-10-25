@@ -73,6 +73,13 @@ const posts = [
     date: "17 de Outubro, 2025",
   },
   {
+    user: "EBD INFORMATIVO",
+    avatar: "imagens/ebd-192x192.png",
+    image: "imagens/PLATINA.jpg",
+    text: "Nair Nany apresenta uma proposta artística singular, fundindo ritmos tradicionais angolanos com influências modernas do gospel contemporâneo. O resultado é uma sonoridade fresca, espiritual e culturalmente autêntica, que tem conquistado admiradores de várias idades e origens.' 💡",
+    date: "17 de Outubro, 2025",
+  },
+  {
     user: "Igreja Betel",
     avatar: "https://i.pravatar.cc/150?img=12",
     video: "https://youtube.com/shorts/YH-D95pf_VY?si=FMWm8dohTvj9LFvC",
