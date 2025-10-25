@@ -67,7 +67,7 @@ const feed = document.getElementById("feed");
 const posts = [
   {
     user: "Congregação Gilgal",
-    avatar: "https://i.pravatar.cc/150?img=23",
+    avatar: "imagens/adp.png",
     image: "imagens/gilgal.jpg",
     text: "📖 Tema da semana: 'Andar na luz' 💡",
     date: "17 de Outubro, 2025",
@@ -80,18 +80,17 @@ const posts = [
     date: "17 de Outubro, 2025",
   },
   {
-    user: "Igreja Betel",
-    avatar: "https://i.pravatar.cc/150?img=12",
+    user: "Centro Samaria Gamek",
+    avatar: "imagens/adp.png",
     video: "https://youtube.com/shorts/YH-D95pf_VY?si=FMWm8dohTvj9LFvC",
     text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
     date: "18 de Outubro, 2025",
   },
 
   {
-    user: "Francisco Marques Afonso",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    video:
-      "https://web.facebook.com/share/r/19Si1LQPMb/?mibextid=rS40aB7S9Ucbxw6v",
+    user: "ADP EBNÉZER",
+    avatar: "imagens/adp.png",
+    image: "imagens/ebenezer.jpg",
     text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
     date: "18 de Outubro, 2025",
   },
@@ -110,11 +109,11 @@ const posts = [
     date: "17 de Outubro, 2025",
   },
   {
-    user: "EBD Central",
-    avatar: "https://i.pravatar.cc/150?img=23",
-    image: "imagens/serão Musical.png",
-    text: "📖 Tema da semana: 'Andar na luz' 💡",
-    date: "17 de Outubro, 2025",
+    user: "Centro Samaria Gamek",
+    avatar: "imagens/Samaria.jpg",
+    image: "imagens/Samaria.jpg",
+    text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
+    date: "18 de Outubro, 2025",
   },
   {
     user: "Juventude Cristã",
