@@ -144,6 +144,14 @@ const posts = [
     text: "👧 Aprendendo a palavra com alegria!",
     date: "14 de Outubro, 2025",
   },
+
+  {
+    user: "Centro Samaria Gamek",
+    avatar: "imagens/Samaria.jpg",
+    image: "imagens/Samaria.jpg",
+    text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
+    date: "18 de Outubro, 2025",
+  },
 ];
 
 // 🔧 Converte qualquer link YouTube para embed e remove controles
