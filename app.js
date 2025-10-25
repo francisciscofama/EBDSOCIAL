@@ -146,6 +146,14 @@ const posts = [
   },
 
   {
+    user: "Francisco Afonso",
+    avatar: "imagens/familia.jpg",
+    image: "imagens/familia.jpg",
+    text: "👧 Aprendendo a palavra com alegria!",
+    date: "14 de Outubro, 2025",
+  },
+
+  {
     user: "Centro Samaria Gamek",
     avatar: "imagens/Samaria.jpg",
     image: "imagens/Samaria.jpg",
