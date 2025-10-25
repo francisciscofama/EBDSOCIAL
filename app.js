@@ -66,6 +66,13 @@ const feed = document.getElementById("feed");
 
 const posts = [
   {
+    user: "Congregação Gilgal",
+    avatar: "https://i.pravatar.cc/150?img=23",
+    image: "imagens/gilgal.jpg",
+    text: "📖 Tema da semana: 'Andar na luz' 💡",
+    date: "17 de Outubro, 2025",
+  },
+  {
     user: "Igreja Betel",
     avatar: "https://i.pravatar.cc/150?img=12",
     video: "https://youtube.com/shorts/YH-D95pf_VY?si=FMWm8dohTvj9LFvC",
