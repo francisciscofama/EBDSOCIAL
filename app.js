@@ -90,7 +90,7 @@ const posts = [
   {
     user: "ADP EBNÉZER",
     avatar: "imagens/adp.png",
-    image: "imagens/ebenezer.jpg",
+    image: "imagens/ebnezer.jpg",
     text: "🎶 Louvai ao Senhor, porque Ele é bom! 🙌",
     date: "18 de Outubro, 2025",
   },
