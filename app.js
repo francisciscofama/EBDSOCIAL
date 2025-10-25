@@ -96,6 +96,13 @@ const posts = [
     date: "17 de Outubro, 2025",
   },
   {
+    user: "EBD Central",
+    avatar: "https://i.pravatar.cc/150?img=23",
+    image: "imagens/serão Musical.png",
+    text: "📖 Tema da semana: 'Andar na luz' 💡",
+    date: "17 de Outubro, 2025",
+  },
+  {
     user: "Juventude Cristã",
     avatar: "https://i.pravatar.cc/150?img=45",
     video: "https://www.youtube.com/watch?v=LHgpTnz_g9M",
@@ -148,19 +155,26 @@ function carregarPosts() {
       (p) => `
       <div class="post">
         <div class="post-header">
-          <img src="${p.avatar}" alt="${p.user}" />
+          <img src="${p.avatar}" alt="${p.user}" class="avatar" />
           <h3>${p.user}</h3>
         </div>
 
-        <div class="post-video">
-          <iframe
-            class="video-frame"
-            src="${toEmbedLink(p.video)}"
-            title="${p.text}"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-          ></iframe>
+        <div class="post-media">
+          ${
+            p.video
+              ? `
+            <iframe
+              class="video-frame"
+              src="${toEmbedLink(p.video)}"
+              title="${p.text}"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>`
+              : p.image
+              ? `<img src="${p.image}" alt="${p.text}" class="post-image" />`
+              : ""
+          }
         </div>
 
         <div class="post-content">${p.text}</div>
