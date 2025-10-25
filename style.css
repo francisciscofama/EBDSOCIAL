@@ -261,3 +261,55 @@
     font-size: 24px;
   }
 }
+
+/* Estilo do botão de configurações */
+#configBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito ao passar o mouse */
+#configBtn:hover {
+  background: #eaeaea;
+  border-color: #aaa;
+}
+
+/* Campo de texto dentro do botão */
+#configBtn input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
+  width: 160px;
+  padding: 6px;
+}
+
+/* Quando clicar no campo, o botão não deve parecer "pressionado" */
+#configBtn:active {
+  transform: none;
+}
+
+/* Efeito de foco no input */
+#configBtn input[type="text"]:focus {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  #configBtn input[type="text"] {
+    width: 180px;
+    font-size: 13px;
+  }
+}
